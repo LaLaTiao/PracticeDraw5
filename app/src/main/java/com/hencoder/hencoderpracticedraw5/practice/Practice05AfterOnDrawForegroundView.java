@@ -30,12 +30,10 @@ public class Practice05AfterOnDrawForegroundView extends AppCompatImageView {
     @Override
     public void onDrawForeground(Canvas canvas) {
         super.onDrawForeground(canvas);
-
-        // 在 super.onDrawForeground() 的下方插入绘制代码，让绘制内容盖住前景
-        // 由于这期的重点是绘制代码的位置而不是绘制代码本身，所以直接给出绘制代码，你只要解除注释就好
-        /*paint.setColor(Color.parseColor("#f44336"));
+        //半透明遮罩加在了xml的foreground属性上,要保证NEW标签能够正常显示,那么必须要在onDrawForeground的super.onDrawForeground()后面
+        paint.setColor(Color.parseColor("#f44336"));
         canvas.drawRect(0, 40, 200, 120, paint);
         paint.setColor(Color.WHITE);
-        canvas.drawText("New", 20, 100, paint);*/
+        canvas.drawText("New", 20, 100, paint);
     }
 }
